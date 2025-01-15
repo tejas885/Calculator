@@ -1,0 +1,33 @@
+def add(n1, n2):
+    return n1 + n2
+
+def subtract(n1,n2):
+     return n1-n2
+
+def multiply(n1, n2):
+     return n1*n2
+
+def divide(n1,n2):
+    if n2!=0:
+     return n1/n2
+    else:
+        return("Infinity")
+#Add above functions as values for the following keys ="+", "-","*","/"
+operations = {
+    "+": add,
+    "-": subtract,
+    "*": multiply,
+    "/": divide
+}
+print("Welcome to the Python Calculator")
+first_number=float(input("Type the first number: "))
+for key in operations.keys():
+    print(key)
+oper =input("Pick an Operation")
+if oper in operations:
+    second_number=float(input("Type the second number: "))
+    result= operations[oper](first_number,second_number)
+    print(result)
+else:
+    print("Invalid Operation")
+
